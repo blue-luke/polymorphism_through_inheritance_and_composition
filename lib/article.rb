@@ -1,8 +1,6 @@
 require 'document'
-require 'author'
+require 'author_module'
 
 class Article < Document
-  def enter_author(name, number)
-    @author = Author.new(name, number)
-  end
+  include AuthorModule
 end
