@@ -1,11 +1,11 @@
 require 'article'
 
 describe Article do
-  let (:article)   { described_class.new('My Lovely Book') }
+  let (:article)   { described_class.new('My Lovely Article') }
 
   describe('#initialize') do
     it 'has a title' do
-      expect(article.title).to eq('My Lovely Book')
+      expect(article.title).to eq('My Lovely Article')
     end
 
     it 'is not on loan' do
@@ -34,6 +34,13 @@ describe Article do
 
     it 'raises an error if the article is not on loan' do
       expect{ article.check_in }.to raise_error('item is not currently on loan')
+    end
+  end
+
+  describe ('#enter_author') do
+    it 'enters and shows an author' do
+      article.enter_author("Jane Smith", "555 5555")
+      expect(article.author.name).to eq "Jane Smith"
     end
   end
 end

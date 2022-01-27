@@ -36,4 +36,11 @@ describe Book do
       expect{ book.check_in }.to raise_error('item is not currently on loan')
     end
   end
+
+  describe ('#enter_author') do
+    it 'enters and shows an author' do
+      book.enter_author("Jane Smith", "555 5555")
+      expect(book.author.name).to eq "Jane Smith"
+    end
+  end
 end
