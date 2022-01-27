@@ -1,4 +1,4 @@
-module Author
+class Author
   attr_reader :name, :number
   def initialize(name, number)
     @name = name
