@@ -1,15 +1,4 @@
-class Newspaper
-  attr_reader :title
-
-  def initialize(title)
-    @title = title
-    @on_loan = false
-  end
-
-  def on_loan?
-    @on_loan
-  end
-
+class Newspaper < Document
   def check_in
     raise 'newspapers are not available for loan'
   end
